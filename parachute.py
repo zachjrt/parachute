@@ -3,6 +3,10 @@ from random import random, randrange
 
 import random
 
+
+#Possible Word List(~14k words)
+#PossibleWordsList = open("words-by-frequency.txt", "r").read().split()
+
 wordList = ["secret", "house", "hedgehog"]
 #head = "O"
 #parachute = ["___", "/___\\", "\\   /", "\\/", head, "/|\\", "/ \\"]
