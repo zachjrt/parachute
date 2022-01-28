@@ -16,7 +16,15 @@ class Word:
 
 class Board:
     def __init__(self):
-        self.value = "none"
+        self.board = ["none"]
+    def __init__(self, length):
+        self.board = ["", "", "", "", "", "", "", "", "", "", "", ""]
+        for i in range(length):
+            self.board[i] = "_"
+    def display(self):
+       print(" ".join(self.board))
+
+
 class Parachute:
     def __init__(self):
         self.head = "  O"
@@ -32,20 +40,24 @@ class Game:
         self.misses = 0        
 
     def guess(self):
-        return input("Guess a letter a-z:")
+        return input("Guess a letter a-z: ")
     def miss(self):
         self.misses += 1
+    
 
 def main():
     game = Game()
     parachute = Parachute()
     gameplay = True
+    randomWord = Word()
+    randomWord.random()
+    board = Board(len(randomWord.value))
     while (gameplay):
-        randomWord = Word()
-        randomWord.random()
+        board.display()
+        parachute.display(game.misses)
         playerGuess = game.guess()
         if(playerGuess == randomWord.value):
-            parachute.display(game.misses)
+            print("You guessed the word")
         else:
             game.miss()
 
