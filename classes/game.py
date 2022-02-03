@@ -32,6 +32,8 @@ class Game:
         return output
 
     def miss(self):
+        # TODO: remove print?
+        print('missed')
         self.misses += 1
 
     def start(self):
@@ -39,15 +41,16 @@ class Game:
         gameplay = True
 
         random_word = sample(self.words_list, 1)[0]
+        print('random_word', random_word)
 
         # Passing the random word to our new instance of Word
         our_word = Word(random_word)
-        our_board = Board(len(our_word.value))
+        our_board = Board(our_word.value)
         while gameplay:
             our_board.display()
             our_parachute.display(self.misses)
             playerGuess = self.guess()
-            if playerGuess == our_word.value:
-                print("You guessed the word")
+            if playerGuess in our_word.value:
+                our_board.reveal_letter(playerGuess)
             else:
                 self.miss()
