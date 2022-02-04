@@ -49,6 +49,7 @@ class Game:
         
         # Passing the random word to our new instance of Word
         our_word = Word(random_word)
+        # Takes the word, splits it into an array so the guess can be tested against each letter.
         our_letters = our_word.split(random_word)
         our_board = Board(our_word.value)
         while gameplay:
@@ -57,5 +58,8 @@ class Game:
             playerGuess = self.guess()
             if playerGuess in our_word.value:
                 our_board.reveal_letter(playerGuess, our_letters)
+                #todo: Flesh out win condition
+                if (our_board.board == our_letters):
+                    print("win")
             else:
                 self.miss()
