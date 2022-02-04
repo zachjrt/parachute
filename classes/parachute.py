@@ -7,3 +7,4 @@ class Parachute:
         
         for i in range(misses, len(self.parachute)):
             print(self.parachute[i])
+        print()
