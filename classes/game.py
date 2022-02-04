@@ -11,15 +11,38 @@ Board = board.Board
 Parachute = parachute.Parachute
 
 
+
 class Game:
+    """Example text. 
+    
+    Example text.
+
+    Attributes:
+        
+    """
     def __init__(self):
+        """Example text.
+        
+        Args:
+            
+        """
         self.misses = 0        
         self.words_list = self._load_words()
 
     def guess(self):
+        """Example text.
+        
+        Args:
+            
+        """
         return input("Guess a letter a-z: ")
     
     def _load_words(self):
+        """Example text.
+        
+        Args:
+            
+        """
         # my_path is an abspath for the current dir
         my_path = os.path.abspath(os.path.dirname(__file__))
         # path = abspath + file name = abspath for the file
@@ -33,33 +56,67 @@ class Game:
         return output
 
     def miss(self):
+        """Example text.
+        
+        Args:
+            
+        """
         # TODO: remove print?
-        print('missed')
+        print('Missed.')
         self.misses += 1
 
+    def win(self):
+        """Example text.
+        
+        Args:
+            
+        """
+        print("You win!")
+        quit()
+        
+
+    def lose(self):
+        """Example text.
+        
+        Args:
+            
+        """
+        print("You lose!")
+        quit()
   
 
     def start(self):
+        """Example text.
+        
+        Args:
+            
+        """
         our_parachute = Parachute()
         gameplay = True
 
         random_word = sample(self.words_list, 1)[0]
-        print('random_word', random_word)
+        #print random word for testing bel
+        #print('random_word', random_word)
 
-        
         # Passing the random word to our new instance of Word
-        our_word = Word(random_word)
+        our_word = Word()
+        our_word.set(random_word)
+
+
         # Takes the word, splits it into an array so the guess can be tested against each letter.
         our_letters = our_word.split()
-        our_board = Board(our_word.value)
+        our_board = Board(our_word.get())
         while gameplay:
             our_board.display()
             our_parachute.display(self.misses)
             playerGuess = self.guess()
-            if playerGuess in our_word.value:
+            if playerGuess in our_word.get():
                 our_board.reveal_letter(playerGuess, our_letters)
-                #todo: Flesh out win condition
                 if (our_board.board == our_letters):
-                    print("win")
+                    our_parachute.display(self.misses)
+                    self.win()
             else:
                 self.miss()
+                if (self.misses >= 4):
+                    our_parachute.display(self.misses)
+                    self.lose()
