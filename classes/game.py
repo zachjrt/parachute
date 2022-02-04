@@ -50,7 +50,7 @@ class Game:
         # Passing the random word to our new instance of Word
         our_word = Word(random_word)
         # Takes the word, splits it into an array so the guess can be tested against each letter.
-        our_letters = our_word.split(random_word)
+        our_letters = our_word.split()
         our_board = Board(our_word.value)
         while gameplay:
             our_board.display()
