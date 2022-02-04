@@ -7,7 +7,11 @@ class Board:
         self.word = word
         self.board = ["_" for i in range(len(word))]
     
-    def reveal_letter(self, letter):
+    def reveal_letter(self, guess, letters):
+
+        for i in range(len(self.word)):
+           if (guess == letters[i]):
+               self.board[i] = guess
         # update the board to reveal all instances of the letter in the word
         pass
 

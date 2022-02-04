@@ -1,3 +1,4 @@
+from posixpath import split
 from random import random, randrange, sample
 import os.path
 
@@ -36,6 +37,8 @@ class Game:
         print('missed')
         self.misses += 1
 
+  
+
     def start(self):
         our_parachute = Parachute()
         gameplay = True
@@ -43,14 +46,16 @@ class Game:
         random_word = sample(self.words_list, 1)[0]
         print('random_word', random_word)
 
+        
         # Passing the random word to our new instance of Word
         our_word = Word(random_word)
+        our_letters = our_word.split(random_word)
         our_board = Board(our_word.value)
         while gameplay:
             our_board.display()
             our_parachute.display(self.misses)
             playerGuess = self.guess()
             if playerGuess in our_word.value:
-                our_board.reveal_letter(playerGuess)
+                our_board.reveal_letter(playerGuess, our_letters)
             else:
                 self.miss()
