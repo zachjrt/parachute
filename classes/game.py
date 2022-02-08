@@ -13,35 +13,41 @@ Parachute = parachute.Parachute
 
 
 class Game:
-    """Example text. 
+    """The class that directs the game. 
     
-    Example text.
+    The responsibility of a Game is to control the sequence of play, load the word the player will look for and end the game.
+
 
     Attributes:
-        
+        misses (int): number of times a person can enter a wrong word.
+        words_list (str): the word that the player is tryign to guess. 
     """
     def __init__(self):
-        """Example text.
+        """Constructs a new instance of Game.
         
         Args:
-            
+            self (Game): An instance of Game.
         """
         self.misses = 0        
         self.words_list = self._load_words()
 
     def guess(self):
-        """Example text.
+        """Ask the player to enter a letter.
         
         Args:
-            
+            self (Game): An instance of Game.
+        Returns:
+            A string value.
         """
         return input("Guess a letter a-z: ")
     
     def _load_words(self):
-        """Example text.
+        """Open the text file, read each line and create the output list of words.
         
         Args:
-            
+            self (Game): An instance of Game.
+        Returns:
+            A list with all the posible words to choose from.
         """
         # my_path is an abspath for the current dir
         my_path = os.path.abspath(os.path.dirname(__file__))
@@ -56,40 +62,48 @@ class Game:
         return output
 
     def miss(self):
-        """Example text.
+        """Increment the variable misses by one every time an incorrect letters has been chosen.
         
         Args:
-            
+            self (Game): An instance of Game.
         """
         # TODO: remove print?
         print('Missed.')
         self.misses += 1
 
     def win(self):
-        """Example text.
+        """Display a message if the player has won the game.
         
         Args:
-            
+            self (Game): An instance of Game.
         """
         print("You win!")
         quit()
         
 
     def lose(self):
-        """Example text.
+        """Display a message if the player has lost the game.
         
         Args:
-            
+            self (Game): An instance of Game.
         """
         print("You lose!")
         quit()
   
 
     def start(self):
-        """Example text.
+        """Main loop of the game, choose a ramdom word and determine if the player enter a correct letter, 
+            display the board, and parachute state, and finalize the game.
         
         Args:
-            
+            self (Game): An instance of Game.
+        Attributes:
+            our_parachute (Parachute): an instance of Parachute
+            gameplay (boolean): Whether the game continue or not.
+            random_word(string): random word to be guess by the player.
+            our_word (Word): an instance of Word.
+            our_letters(list): Takes the word, splits it into an array so the guess can be tested against each letter.
+            our_board (list): A list of hidden or guessed letters.
         """
         our_parachute = Parachute()
         gameplay = True
@@ -101,9 +115,6 @@ class Game:
         # Passing the random word to our new instance of Word
         our_word = Word()
         our_word.set(random_word)
-
-
-        # Takes the word, splits it into an array so the guess can be tested against each letter.
         our_letters = our_word.split()
         our_board = Board(our_word.get())
         while gameplay:

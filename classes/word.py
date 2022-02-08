@@ -12,28 +12,28 @@ class Word:
         """Constructs a new Word.
         
         Args:
-            self (word): an instance of word.
+            self (Word): an instance of Word.
         """
         self.value = "value"
         self.letters = []
     def split(self):
-        """Example text.
+        """Returns a list with the letters of the word.
         
         Args:
-            
+            self (Word): an instance of Word.
         """
         return [char for char in self.value]
     def get(self):
-        """Example text.
+        """Returns the chosen random word.
         
         Args:
-            
+            self (Word): an instance of Word.
         """
         return self.value
     def set(self, word):
-        """Example text.
+        """Set the chosen random word to the variable.
         
         Args:
-            
+            self (Word): an instance of Word.
         """
         self.value = word

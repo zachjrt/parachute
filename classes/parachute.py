@@ -1,23 +1,23 @@
 class Parachute:
-    """Example text. 
-    
-    Example text.
-
-    Attributes:
+    """
+        The responsability of the parachute is the display it's state.
         
+    Attributes:
+        parachute (list): A list of states of the parachute. 
     """
     def __init__(self):
-        """Example text.
+        """Constructs a new instance of Parachute.
         
         Args:
-            
+            self (Parachute): An instance of Parachute.
         """
         self.parachute = [" ___", "/___\\", "\\   /", " \\ /", "  O", " /|\\", " / \\", "", "^^^^^^^"]
     def display(self, misses):
-        """Example text.
-        
+        """Display the state of the parachute according to the (misses) value.
+
         Args:
-            
+            misses (int) the number of times a have entered an incorrect value.
+            self (Parachute): An instance of Parachute.
         """
         if misses >= 4:
             self.parachute[4] = "  X"
