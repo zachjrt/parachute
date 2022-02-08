@@ -7,6 +7,9 @@ class Word:
         value (value) : will have value in there to contain word
         letter (list) : list of words
     """
+
+    _value = None
+
     def __init__(self):
 
         """Constructs a new Word.
@@ -14,7 +17,7 @@ class Word:
         Args:
             self (Word): an instance of Word.
         """
-        self.value = "value"
+        self._value = "value"
         self.letters = []
     def split(self):
         """Returns a list with the letters of the word.
@@ -22,18 +25,18 @@ class Word:
         Args:
             self (Word): an instance of Word.
         """
-        return [char for char in self.value]
+        return [char for char in self._value]
     def get(self):
         """Returns the chosen random word.
         
         Args:
             self (Word): an instance of Word.
         """
-        return self.value
+        return self._value
     def set(self, word):
         """Set the chosen random word to the variable.
         
         Args:
             self (Word): an instance of Word.
         """
-        self.value = word
+        self._value = word

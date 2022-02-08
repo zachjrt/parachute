@@ -67,7 +67,6 @@ class Game:
         Args:
             self (Game): An instance of Game.
         """
-        # TODO: remove print?
         print('Missed.')
         self.misses += 1
 
