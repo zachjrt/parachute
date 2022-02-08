@@ -27,7 +27,7 @@ root                    (project root folder)
 * Python 3.8.0
 
 ## Authors
-* Mallory Lee
+* Mallory Lee : seperated classes. Imported classes to the appropriate classes and main. Created load_word in game.py
 * Cristian Fernandez
 * Zachary Thompson 
 * Nathanael Budge
