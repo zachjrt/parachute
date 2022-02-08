@@ -15,7 +15,10 @@ The project files and folders are organized as follows:
 ```
 root                    (project root folder)
 +-- parachute             (source code for game)
-  +-- game              (specific classes)
+  +-- Game              (specific classes)
+  +-- Board             (specific classes)
+  +-- Parachute         (specific classes)
+  +-- Word              (specific classes)
   +-- __main__.py       (program entry point)
 +-- README.md           (general info)
 ```
