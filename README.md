@@ -29,6 +29,6 @@ root                    (project root folder)
 ## Authors
 * Mallory Lee : seperated classes. Imported classes to the appropriate classes and main. Created load_word in game.py
 * Cristian Fernandez
-* Zachary Thompson 
+* Zachary Thompson  : Created original class orginizations, created the parachute array and it's methods, created the logic behind the board displaying, created the logic      behind checking if a letter was correct or not.
 * Nathanael Budge
 
