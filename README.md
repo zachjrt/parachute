@@ -28,7 +28,7 @@ root                    (project root folder)
 
 ## Authors
 * Mallory Lee : Created Readme.md file. Made txt file which only contains 5 characters. Seperated classes. Imported classes to the appropriate classes and main. Created load_word in game.py
-* Cristian Fernandez
+* Cristian Fernandez: Method's comments and description. Other pogramming logics.
 * Zachary Thompson  : Created original class orginizations, created the parachute array and it's methods, created the logic behind the board displaying, created the logic      behind checking if a letter was correct or not.
 * Nathanael Budge
 
